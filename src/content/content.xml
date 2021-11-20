@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<content>
+    <authors content="./authors.xml" path="src/authors" sum="4"/>
+    <books content="./books.xml" path="src/books" sum="0"/>
+    <movies content="./movies.xml" path="src/movies" sum="0"/>
+    <unknown content="./unknown.xml" path="src/unknown" sum="0"/>
+</content>
