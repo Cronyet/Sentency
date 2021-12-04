@@ -112,26 +112,48 @@ namespace Program{
 
         private static void xmcTip() => Console.Write("xmc | ");
 
+        private enum Type{
+            author, book, movie, unknown, unselect
+        }
+
         private static void CLM(){
-            bool con = true;
+            bool con = true; Type select = Type.unselect;
             while(con){
-                xmcTip();
-                string cmd = Console.ReadLine();
+                xmcTip(); string cmd = Console.ReadLine();
                 cmd = cmd.Trim();
                 string ins = cmd.Trim().Substring(0, cmd.IndexOf(' ') > 0 ? cmd.IndexOf(' ') : cmd.Length).ToLower();
                 switch(ins){
                     case "exit": con = false; break;
-                    case "view":
-                        
+                    case "view": ViewMode(); break;
+                    case "select":
+                        xmcTip(); Console.ForegroundColor = ConsoleColor.Yellow;
+                        Console.Write("Target type (1 - author | 2 - book | 3 - movie | 4 - unknown) : ");
+                        Console.ForegroundColor = ConsoleColor.White;
+                        if(int.TryParse(Console.ReadLine(), out int t)){
+                            switch(t){
+                                case 1: select = Type.author; break;
+                                case 2: select = Type.book; break;
+                                case 3: select = Type.movie; break;
+                                case 4: select = Type.unknown; break;
+                            }
+                            xmcTip(); Console.ForegroundColor = ConsoleColor.Blue;
+                            Console.Write($"You had selected type : {select.ToString()}\n");
+                            Console.ForegroundColor = ConsoleColor.White;
+                        }
                         break;
                     default:
-                        xmcTip();
-                        Console.ForegroundColor = ConsoleColor.Red;
-                        Console.WriteLine($"No this command named : '{ins}', please check your command.");
-                        Console.ForegroundColor = ConsoleColor.White;
+                        if(!ins.Equals("")){
+                            xmcTip(); Console.ForegroundColor = ConsoleColor.Red;
+                            Console.WriteLine($"No this command named : '{ins}', please check your command.");
+                            Console.ForegroundColor = ConsoleColor.White;
+                        }
                         break;
                 }
             }
+        }
+
+        private static void ViewMode(){
+            
         }
     }
 }

@@ -1,0 +1,28 @@
+Sentency - Help doc - Version: dev-1.0
+Copyright Catrol 2021, License: MIT
+Author: Cqywan, Weclont
+----------------------------------------------------------------------------------------------
+Console - Server.exe:
+* /:
+    ->: help              - print help doc :)
+    ->: ls                - list the connecting clients
+    ->: exit              - shutdown all services and stop the reciving Thread
+    |                       all clents will be kick out
+    ->: init              - program will ask you to input a path about the "content.xml"
+    |                       if the path you input didn't exists, program will warn you
+    |                       but the var of path will also be set of your input
+    ->: path              - show the path of the var that stored your input
+    |                       if the path didn't exists, the font-color will be red
+    ->: deport            - program will ask you to input a IP address like "127.0.0.1:66551"
+    |                       if the IP was in the clients pool, the server will stop the
+    |                       connection between the server and the target IP
+    |                       you can also type the IP after the command deport like this:
+    |                       $ deport 127.0.0.1:4230
+    ->: load              - load the main content.xml and get all sentencies in
+    ->: view           -a - list out all authors with there sentises
+    |                  -b - list out all books with there sentises
+    |                  -m - list out all movies with there sentises
+    ->: push              - you can send a message to all clients
+----------------------------------------------------------------------------------------------
+Help doc ended !
+Nice to meet you !
